@@ -192,6 +192,18 @@
     "sha256": "4f9ad7e24043cf3ec19002737019f0798ebe1cecbfecba2e047ea07b92721ac0"
   },
   {
+    "license_name": "Mistral AI Non-Production License",
+    "license_url": "https://mistral.ai/licenses/MNPL-0.1.md",
+    "name": "Codestral-22B-iq4",
+    "provider_url": "https://huggingface.co/mistralai/Codestral-22B-v0.1",
+    "prompt_template": "[SUFFIX]{suffix}[PREFIX]{prefix}",
+    "chat_template": "<s>{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + '</s> ' }}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}",
+    "urls": [
+      "https://huggingface.co/bartowski/Codestral-22B-v0.1-GGUF/resolve/main/Codestral-22B-v0.1-IQ4_XS.gguf"
+    ],
+    "sha256": "6367ca4d53ec125dcef56a2d19f506e504d3a30ff51a0c5af7c1b70e6baefe5a"
+  },
+  {
     "name": "Nomic-Embed-Text",
     "provider_url": "https://huggingface.co/nomic-ai/nomic-embed-text-v1.5-GGUF",
     "license_name": "Apache 2.0",
@@ -211,6 +223,17 @@
       "https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Base-GGUF/resolve/main/DeepSeek-Coder-V2-Lite-Base-Q8_0.gguf"
     ],
     "sha256": "22cef614d5b3e1d00ece317ded91c48046f1a6f24618639dea110fbc22e5f86c"
+  },
+  {
+    "name": "DeepSeek-Coder-V2-Lite-iq4",
+    "provider_url": "https://huggingface.co/deepseek-ai/DeepSeek-Coder-V2-Lite-Base",
+    "license_name": "Deepseek License",
+    "license_url": "https://github.com/deepseek-ai/deepseek-coder/blob/main/LICENSE-MODEL",
+    "prompt_template": "<｜fim▁begin｜>{prefix}<｜fim▁hole｜>{suffix}<｜fim▁end｜>",
+    "urls": [
+      "https://huggingface.co/bartowski/DeepSeek-Coder-V2-Lite-Base-GGUF/resolve/main/DeepSeek-Coder-V2-Lite-Base-IQ4_XS.gguf"
+    ],
+    "sha256": "e7ca21601e36da60774935e72da1f73ba9a776f7d0242ed7eaaa641ab0fca2cc"
   },
   {
     "name": "Jina-Embeddings-V2-Code",
